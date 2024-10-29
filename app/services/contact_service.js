@@ -1,4 +1,4 @@
-const { ObjectID,ObjectId } = require('mongodb');
+const { ObjectID, ObjectId } = require('mongodb');
 class ContactService {
         constructor(client) {
                 this.Contact = client.db().collection('contacts');
@@ -7,7 +7,7 @@ class ContactService {
                 const contact = {
                         name: payload.name,
                         email: payload.email,
-                        address: payload.adress,
+                        address: payload.address,
                         phone: payload.phone,
                         favorite: payload.favorite,
                 };
@@ -49,7 +49,7 @@ class ContactService {
                         { $set: update },
                         { returnDocument: "after" }
                 );
-                
+
                 return result;
         }
         async delete(id) {
